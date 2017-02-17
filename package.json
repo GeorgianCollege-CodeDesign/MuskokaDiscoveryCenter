@@ -1,0 +1,40 @@
+{
+  "name": "muskokadiscoverycenter",
+  "version": "0.1.0",
+  "description": "internal sign in/out and financial tracker app for Muskoka Discovery Center Daycare",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev"  : "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "~1.16.0",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.0",
+    "express": "~4.14.1",
+    "morgan": "~1.7.0",
+    "pug": "~2.0.0-beta10",
+    "serve-favicon": "~2.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GeorgianCollege-CodeDesign/MuskokaDiscoveryCenter.git"
+  },
+  "keywords": [
+    "muskoka",
+    "discovery",
+    "center",
+    "daycare",
+    "signin",
+    "signout"
+  ],
+  "author": "Esat IBIS <esat.taha.ibis@gmail.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/GeorgianCollege-CodeDesign/MuskokaDiscoveryCenter/issues"
+  },
+  "homepage": "https://github.com/GeorgianCollege-CodeDesign/MuskokaDiscoveryCenter#readme"
+}
