@@ -1,13 +1,29 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+/**
+ * Created by Esat IBIS on 2017-02-16.
+ * Project: MuskokaDiscoveryCenter.
+ * @author: Esat IBIS <esat.taha.ibis@gmail.com>
+ * */
 
-var index = require('./routes/index');
+const express = require('express');
+const path = require('path');
+const favicon = require('serve-favicon');
+const logger = require('morgan');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
-var app = express();
+const index = require('./routes/index');
+const globals = require('./config/globals');
+
+const app = express();
+
+// Connect to the Database
+mongoose.connect(globals.dbRemote);
+const db = mongoose.connection;
+
+db.once('open', function () {
+    console.log('Successfully connected to the mongoDB');
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -25,7 +41,7 @@ app.use('/', index);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
+    const err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
